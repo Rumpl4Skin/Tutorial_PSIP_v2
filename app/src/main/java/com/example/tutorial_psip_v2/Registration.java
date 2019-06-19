@@ -11,6 +11,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -150,6 +151,16 @@ public class Registration extends Fragment {
                         Log.e("SendMail", e.getMessage(), e);
                         send.setProgress(-1);
                     send.setErrorText("Проверьте соединение с интернетом!");
+                    new CountDownTimer(2000, 1000) {
+
+                        public void onTick(long millisUntilFinished) {
+                        }
+
+                        public void onFinish() {
+                            send.setProgress(0);
+                        }
+
+                    }.start();
                     }
             }
         });

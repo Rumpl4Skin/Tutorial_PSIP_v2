@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -94,6 +95,16 @@ public class Autorization extends Fragment {
                     pass.setEnabled(true);
                     btnSignIn.setErrorText("Пользователль не найден!");
                     btnSignIn.setProgress(-1);
+                    new CountDownTimer(2000, 1000) {
+
+                        public void onTick(long millisUntilFinished) {
+                        }
+
+                        public void onFinish() {
+                            btnSignIn.setProgress(0);
+                        }
+
+                    }.start();
                 }
             }
         });

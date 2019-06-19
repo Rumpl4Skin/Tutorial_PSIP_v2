@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="all">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:id="@+id/myswitch"
+        android:title="Темная/Светлая тема"
+        android:actionLayout="@layout/switch_layout"
         app:showAsAction="never" />
+    </group>
     <item
         android:id="@+id/action_login"
-        android:orderInCategory="100"
+        android:orderInCategory="101"
         android:title="Войти"
         app:showAsAction="never" />
+
     <item
         android:id="@+id/action_logout"
-        android:orderInCategory="100"
+        android:orderInCategory="101"
         android:title="Выйти из учетной записи"
         app:showAsAction="never" />
 </menu>

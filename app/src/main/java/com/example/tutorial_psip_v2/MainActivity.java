@@ -1,6 +1,7 @@
 package com.example.tutorial_psip_v2;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,11 +11,15 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,8 +34,11 @@ public class MainActivity extends AppCompatActivity
     NavController navController;
     private DatabaseHelper mDBHelper;
     private SQLiteDatabase mDb;
+    SwitchCompat s;
 
-
+static{
+    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
+}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -136,6 +144,8 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        MenuItem item = menu.findItem(R.id.myswitch);
+        item.setActionView(R.layout.switch_layout);
         name_user=findViewById(R.id.name_user);
         isAuth();
         name_user.setOnClickListener(new View.OnClickListener() {
@@ -161,7 +171,19 @@ public class MainActivity extends AppCompatActivity
                 case R.id.action_logout:
                     isLogOut();
                     break;
-                case R.id.action_settings:
+                case R.id.myswitch:
+                    int currentNightMode = getResources().getConfiguration().uiMode
+                            & Configuration.UI_MODE_NIGHT_MASK;
+                    switch (currentNightMode) {
+                        case Configuration.UI_MODE_NIGHT_NO:
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                            recreate();
+                            break;
+                        case Configuration.UI_MODE_NIGHT_YES:
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                            recreate();
+                            break;
+                    }
                     break;
             }
             //скрытие клавиатуры
