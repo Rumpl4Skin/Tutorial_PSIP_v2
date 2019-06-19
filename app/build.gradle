@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.tutorial_psip_v2"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+configurations.all { exclude group: 'com.android.support', module: 'support-v4' }
+dependencies {
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-v4:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //PDF viewer
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0'
+    implementation 'android.arch.navigation:navigation-ui:1.0.0'
+
+    //animeted buttom
+    implementation 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
+    implementation files('libs\\activation.jar')
+    implementation files('libs\\additionnal.jar')
+    implementation files('libs\\mail.jar')
+
+    implementation 'me.dm7.barcodescanner:zxing:1.9'//qr-reader
+
+    implementation 'com.github.kbiakov:CodeView-Android:1.3.2'
+
+    implementation 'com.github.antonKozyriatskyi:CircularProgressIndicator:1.3.0'
+}

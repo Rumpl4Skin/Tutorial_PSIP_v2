@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".test">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Тест по теме: Лабараторная работа №1"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/label_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Вопрос:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/current_quest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="из" />
+
+            <TextView
+                android:id="@+id/total_quest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:text="ошибок:" />
+
+            <TextView
+                android:id="@+id/attempt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="из" />
+
+            <TextView
+                android:id="@+id/attempt_max"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Что такое HTML?"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/answers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/ansv0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Лучший язык программирования"
+                    android:textAlignment="viewStart"
+                    android:textSize="24sp" />
+
+                <RadioButton
+                    android:id="@+id/ansv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Язык гипертекстовой разметки"
+                    android:textSize="24sp" />
+
+                <RadioButton
+                    android:id="@+id/ansv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Просто сокращение"
+                    android:textSize="24sp" />
+
+                <RadioButton
+                    android:id="@+id/ansv3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Просто сокращение"
+                    android:textSize="24sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/proverka"
+            style="@android:style/Widget.Material.Light.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Дать ответ"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="Дать ответ" />
+
+        <Button
+            android:id="@+id/next_quest_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Следующий вопрос"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+</FrameLayout>

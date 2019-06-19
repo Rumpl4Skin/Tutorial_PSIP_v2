@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/main_page">
+
+    <fragment
+        android:id="@+id/main_page"
+        android:name="com.example.tutorial_psip_v2.main_page"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page" >
+        <action
+            android:id="@+id/action_main_page_to_thems"
+            app:destination="@id/thems"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_main_page_to_autorization"
+            app:destination="@id/autorization" />
+        <action
+            android:id="@+id/action_main_page_to_seadbox"
+            app:destination="@id/seadbox" />
+        <action
+            android:id="@+id/action_main_page_to_personal_cabinet"
+            app:destination="@id/personal_cabinet" />
+    </fragment>
+    <fragment
+        android:id="@+id/thems"
+        android:name="com.example.tutorial_psip_v2.thems"
+        android:label="fragment_thems"
+        tools:layout="@layout/fragment_thems" >
+        <argument
+            android:name="name_temi"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_thems_to_uriki"
+            app:destination="@id/uroki" />
+    </fragment>
+    <fragment
+        android:id="@+id/soderjanie_uroka"
+        android:name="com.example.tutorial_psip_v2.soderjanie_uroka"
+        android:label="fragment_soderjanie_uroka"
+        tools:layout="@layout/fragment_soderjanie_uroka" >
+        <action
+            android:id="@+id/action_soderjanie_uroka_to_test"
+            app:destination="@id/test"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/test"
+        android:name="com.example.tutorial_psip_v2.test"
+        android:label="fragment_test"
+        tools:layout="@layout/fragment_test" >
+        <action
+            android:id="@+id/action_test_to_soderjanie_uroka"
+            app:destination="@id/soderjanie_uroka"
+            app:enterAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_test_to_thems"
+            app:destination="@id/thems" />
+        <action
+            android:id="@+id/action_test_to_tasks"
+            app:destination="@id/tasks" />
+    </fragment>
+    <fragment
+        android:id="@+id/autorization"
+        android:name="com.example.tutorial_psip_v2.Autorization"
+        android:label="fragment_autorization"
+        tools:layout="@layout/fragment_autorization" >
+        <action
+            android:id="@+id/action_autorization_to_registration"
+            app:destination="@id/registration" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration"
+        android:name="com.example.tutorial_psip_v2.Registration"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registration_to_QR_reader"
+            app:destination="@id/QR_reader" />
+    </fragment>
+    <fragment
+        android:id="@+id/uroki"
+        android:name="com.example.tutorial_psip_v2.uroki"
+        android:label="fragment_uroki"
+        tools:layout="@layout/fragment_uroki" >
+        <action
+            android:id="@+id/action_uriki_to_soderjanie_uroka"
+            app:destination="@id/soderjanie_uroka" />
+    </fragment>
+    <fragment
+        android:id="@+id/QR_reader"
+        android:name="com.example.tutorial_psip_v2.QR_reader"
+        android:label="fragment_qr_reader"
+        tools:layout="@layout/fragment_qr_reader" />
+    <fragment
+        android:id="@+id/seadbox"
+        android:name="com.example.tutorial_psip_v2.seadbox"
+        android:label="fragment_seadbox"
+        tools:layout="@layout/fragment_seadbox" />
+    <fragment
+        android:id="@+id/tasks"
+        android:name="com.example.tutorial_psip_v2.tasks"
+        android:label="fragment_tasks"
+        tools:layout="@layout/fragment_tasks" />
+    <fragment
+        android:id="@+id/personal_cabinet"
+        android:name="com.example.tutorial_psip_v2.Personal_cabinet"
+        android:label="fragment_personal_cabinet"
+        tools:layout="@layout/fragment_personal_cabinet" />
+</navigation>
