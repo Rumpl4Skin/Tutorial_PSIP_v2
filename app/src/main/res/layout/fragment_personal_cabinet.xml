@@ -19,13 +19,7 @@
                 android:id="@+id/first_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/last_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="TextView"
                 android:textSize="24sp" />
 
@@ -54,7 +48,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:maxLines="3"
-                android:text="Тестов пройдено"
+                android:text="Тестов пройдено:"
                 android:textSize="18sp" />
 
             <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
@@ -68,7 +62,7 @@
                 app:direction="clockwise"
                 app:dotColor="?colorPrimary"
                 app:dotWidth="16dp"
-                app:drawDot="true"
+                app:drawDot="false"
                 app:enableProgressAnimation="true"
                 app:fillBackground="false"
                 app:gradientType="no_gradient"
@@ -76,7 +70,7 @@
                 app:progressBackgroundStrokeWidth="8dp"
                 app:progressCap="round"
                 app:progressColor="?colorPrimary"
-                app:progressStrokeWidth="16dp"
+                app:progressStrokeWidth="10dp"
                 app:startAngle="270"
                 app:textColor="@color/colorPrimary"
                 app:textSize="14sp" />
@@ -95,7 +89,7 @@
                 android:layout_weight="1"
                 android:lines="2"
                 android:maxLines="3"
-                android:text="Практических заданий выполненно"
+                android:text="Практических заданий выполненно:"
                 android:textSize="18sp" />
 
             <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
@@ -109,7 +103,7 @@
                 app:direction="clockwise"
                 app:dotColor="?colorPrimary"
                 app:dotWidth="16dp"
-                app:drawDot="true"
+                app:drawDot="false"
                 app:enableProgressAnimation="true"
                 app:fillBackground="false"
                 app:gradientType="no_gradient"
@@ -117,9 +111,9 @@
                 app:progressBackgroundStrokeWidth="8dp"
                 app:progressCap="round"
                 app:progressColor="?colorPrimary"
-                app:progressStrokeWidth="16dp"
+                app:progressStrokeWidth="10dp"
                 app:startAngle="270"
-                app:textColor="#fffc59"
+                app:textColor="@color/colorPrimary"
                 app:textSize="14sp" />
         </TableRow>
 

@@ -45,6 +45,7 @@ static{
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mail_user=findViewById(R.id.mail_user);
 
 
 
@@ -147,6 +148,7 @@ static{
         MenuItem item = menu.findItem(R.id.myswitch);
         item.setActionView(R.layout.switch_layout);
         name_user=findViewById(R.id.name_user);
+        mail_user=findViewById(R.id.mail_user);
         isAuth();
         name_user.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -207,7 +209,10 @@ static{
                 navController.navigate(R.id.seadbox);
                 break;
             case R.id.nav_send:
-                navController.navigate(R.id.personal_cabinet);
+                if(mail_user.getText().equals(R.string.nav_header_subtitle)){
+                navController.navigate(R.id.personal_cabinet);}
+                else Toast.makeText(this, "Пока вы не авторизуетесь, этот раздел недоступен!",
+                        Toast.LENGTH_LONG).show();
                 break;
         }
 

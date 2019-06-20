@@ -8,6 +8,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -161,6 +162,17 @@ public class test extends Fragment {
                 } else {//не верный ответ
                     this_test.attempt++;
                     attempt.setText("" + this_test.attempt);
+                    attempt.setTextColor(Color.RED);
+                    new CountDownTimer(2000, 1000) {
+
+                        public void onTick(long millisUntilFinished) {
+                        }
+
+                        public void onFinish() {
+                            attempt.setTextColor(Color.BLACK);
+                        }
+
+                    }.start();
                     if (this_test.test_failed()) {
                         Toast.makeText(getContext(), "Тест провален! Перечитайте мaтериал!",
                                 Toast.LENGTH_SHORT).show();
@@ -177,9 +189,19 @@ public class test extends Fragment {
                         proverit.setTextColor(Color.RED);
 
                         proverit.setText("Не верно!");
-                        //          test.this.wait(1000);
-                        proverit.setTextColor(Color.BLACK);
-                        proverit.setText("ДАТЬ ОТВЕТ");
+
+                        new CountDownTimer(2000, 1000) {
+
+                            public void onTick(long millisUntilFinished) {
+                            }
+
+                            public void onFinish() {
+                                proverit.setTextColor(Color.BLACK);
+                                proverit.setText("ДАТЬ ОТВЕТ");
+                            }
+
+                        }.start();
+
 
                     }
                 }

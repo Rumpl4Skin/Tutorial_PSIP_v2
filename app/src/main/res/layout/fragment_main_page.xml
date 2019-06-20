@@ -15,7 +15,11 @@
         <ListView
             android:id="@+id/countriesList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:dividerHeight="2dp"
+            android:fadingEdge="vertical"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true" />
 
         <TextView
             android:id="@+id/textView2"
